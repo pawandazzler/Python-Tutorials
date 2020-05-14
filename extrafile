@@ -1,505 +1,613 @@
-var tbl = document.getElementById("tblMain");
-if (tbl != null) {
-    for (var i = 0; i < tbl.rows.length; i++) {
-        for (var j = 0; j < tbl.rows[i].cells.length; j++) {
-            tbl.rows[i].cells[j].onclick = (function (i, j) {
-                return function () {
-                    alert('R' + (i + 1) + 'C' + (j + 1));
-                };
-            }(i, j));
-        }
-    }
+/* ------------------------------------------
+CSS TOGGLE SWITCHES (IonuÈ› Colceriu)
+Licensed under Unlicense 
+https://github.com/ghinda/css-toggle-switch
+------------------------------------------ */
+
+/* Hide by default */
+
+.switch .slide-button,
+.toggle p span {
+	display: none;
 }
 
-#
-<h1>Sticky Table Headers by <code>position: sticky;</code></h1>
-<p>Trying out to make a sweet table with sticky table headers if their table is in the viewport. (Like the iOS names list names beginning capital letter)</p>
-<p class="warning">Supported by Firefox and Safari [<a href="http://caniuse.com/#feat=css-sticky" target="_blank">caniuse.com#sticky</a>]</p>
-<main class="st_viewport">
-  <div class="st_wrap_table" data-table_id="0">
-    <header class="st_table_header">
-      <h2>Table header one</h2>
-      <div class="st_row">
-        <div class="st_column _rank">Rank</div>
-        <div class="st_column _name">Name</div>
-        <div class="st_column _surname">Surname</div>
-        <div class="st_column _year">Year</div>
-        <div class="st_column _section">Section</div>
-      </div>
-    </header>
-    <div class="st_table">
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">John</div>
-        <div class="st_column _surname">Doe</div>
-        <div class="st_column _year">1973</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Max</div>
-        <div class="st_column _surname">Luke</div>
-        <div class="st_column _year">1971</div>
-        <div class="st_column _section">USA</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Jonas</div>
-        <div class="st_column _surname">Kunze</div>
-        <div class="st_column _year">2015</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Janina</div>
-        <div class="st_column _surname">Endres</div>
-        <div class="st_column _year">1955</div>
-        <div class="st_column _section">Belgium</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Lena</div>
-        <div class="st_column _surname">Eifel</div>
-        <div class="st_column _year">1996</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Jonas</div>
-        <div class="st_column _surname">Nacht</div>
-        <div class="st_column _year">1968</div>
-        <div class="st_column _section">Swiss</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Vanessa</div>
-        <div class="st_column _surname">Schneider</div>
-        <div class="st_column _year">2004</div>
-        <div class="st_column _section">Russia</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">laura</div>
-        <div class="st_column _surname">Beike</div>
-        <div class="st_column _year">1952</div>
-        <div class="st_column _section">Sweden</div>
-      </div>
-    </div>
-  </div>
-  <div class="st_wrap_table" data-table_id="1">
-    <header class="st_table_header">
-      <h2>Holy shit :@</h2>
-      <div class="st_row">
-        <div class="st_column _rank">Rank</div>
-        <div class="st_column _name">Name</div>
-        <div class="st_column _surname">Surname</div>
-        <div class="st_column _year">Year</div>
-        <div class="st_column _section">Section</div>
-      </div>
-    </header>
-    <div class="st_table">
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Jonas</div>
-        <div class="st_column _surname">Kunze</div>
-        <div class="st_column _year">2015</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Janina</div>
-        <div class="st_column _surname">Endres</div>
-        <div class="st_column _year">1955</div>
-        <div class="st_column _section">Belgium</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Lena</div>
-        <div class="st_column _surname">Eifel</div>
-        <div class="st_column _year">1996</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">John</div>
-        <div class="st_column _surname">Doe</div>
-        <div class="st_column _year">1973</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Max</div>
-        <div class="st_column _surname">Luke</div>
-        <div class="st_column _year">1971</div>
-        <div class="st_column _section">USA</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Jonas</div>
-        <div class="st_column _surname">Nacht</div>
-        <div class="st_column _year">1968</div>
-        <div class="st_column _section">Swiss</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Vanessa</div>
-        <div class="st_column _surname">Schneider</div>
-        <div class="st_column _year">2004</div>
-        <div class="st_column _section">Russia</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">laura</div>
-        <div class="st_column _surname">Beike</div>
-        <div class="st_column _year">1952</div>
-        <div class="st_column _section">Sweden</div>
-      </div>
-    </div>
-  </div>
-  <div class="st_wrap_table" data-table_id="2">
-    <header class="st_table_header">
-      <h2>Isn't that nice</h2>
-      <div class="st_row">
-        <div class="st_column _rank">Rank</div>
-        <div class="st_column _name">Name</div>
-        <div class="st_column _surname">Surname</div>
-        <div class="st_column _year">Year</div>
-        <div class="st_column _section">Section</div>
-      </div>
-    </header>
-    <div class="st_table">
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Vanessa</div>
-        <div class="st_column _surname">Schneider</div>
-        <div class="st_column _year">2004</div>
-        <div class="st_column _section">Russia</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">laura</div>
-        <div class="st_column _surname">Beike</div>
-        <div class="st_column _year">1952</div>
-        <div class="st_column _section">Sweden</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">John</div>
-        <div class="st_column _surname">Doe</div>
-        <div class="st_column _year">1973</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Max</div>
-        <div class="st_column _surname">Luke</div>
-        <div class="st_column _year">1971</div>
-        <div class="st_column _section">USA</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Jonas</div>
-        <div class="st_column _surname">Kunze</div>
-        <div class="st_column _year">2015</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Janina</div>
-        <div class="st_column _surname">Endres</div>
-        <div class="st_column _year">1955</div>
-        <div class="st_column _section">Belgium</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Lena</div>
-        <div class="st_column _surname">Eifel</div>
-        <div class="st_column _year">1996</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Jonas</div>
-        <div class="st_column _surname">Nacht</div>
-        <div class="st_column _year">1968</div>
-        <div class="st_column _section">Swiss</div>
-      </div>
-    </div>
-  </div>
-  <div class="st_wrap_table" data-table_id="3">
-    <header class="st_table_header">
-      <h2>Native STICKY</h2>
-      <div class="st_row">
-        <div class="st_column _rank">Rank</div>
-        <div class="st_column _name">Name</div>
-        <div class="st_column _surname">Surname</div>
-        <div class="st_column _year">Year</div>
-        <div class="st_column _section">Section</div>
-      </div>
-    </header>
-    <div class="st_table">
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">John</div>
-        <div class="st_column _surname">Doe</div>
-        <div class="st_column _year">1973</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Lena</div>
-        <div class="st_column _surname">Eifel</div>
-        <div class="st_column _year">1996</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Jonas</div>
-        <div class="st_column _surname">Nacht</div>
-        <div class="st_column _year">1968</div>
-        <div class="st_column _section">Swiss</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Vanessa</div>
-        <div class="st_column _surname">Schneider</div>
-        <div class="st_column _year">2004</div>
-        <div class="st_column _section">Russia</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">laura</div>
-        <div class="st_column _surname">Beike</div>
-        <div class="st_column _year">1952</div>
-        <div class="st_column _section">Sweden</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Max</div>
-        <div class="st_column _surname">Luke</div>
-        <div class="st_column _year">1971</div>
-        <div class="st_column _section">USA</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Jonas</div>
-        <div class="st_column _surname">Kunze</div>
-        <div class="st_column _year">2015</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Janina</div>
-        <div class="st_column _surname">Endres</div>
-        <div class="st_column _year">1955</div>
-        <div class="st_column _section">Belgium</div>
-      </div>
-    </div>
-  </div>
-  <div class="st_wrap_table" data-table_id="4">
-    <header class="st_table_header">
-      <h2>CSS3 *~'</h2>
-      <div class="st_row">
-        <div class="st_column _rank">Rank</div>
-        <div class="st_column _name">Name</div>
-        <div class="st_column _surname">Surname</div>
-        <div class="st_column _year">Year</div>
-        <div class="st_column _section">Section</div>
-      </div>
-    </header>
-    <div class="st_table">
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">John</div>
-        <div class="st_column _surname">Doe</div>
-        <div class="st_column _year">1973</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Max</div>
-        <div class="st_column _surname">Luke</div>
-        <div class="st_column _year">1971</div>
-        <div class="st_column _section">USA</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Jonas</div>
-        <div class="st_column _surname">Kunze</div>
-        <div class="st_column _year">2015</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Jonas</div>
-        <div class="st_column _surname">Nacht</div>
-        <div class="st_column _year">1968</div>
-        <div class="st_column _section">Swiss</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Vanessa</div>
-        <div class="st_column _surname">Schneider</div>
-        <div class="st_column _year">2004</div>
-        <div class="st_column _section">Russia</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Janina</div>
-        <div class="st_column _surname">Endres</div>
-        <div class="st_column _year">1955</div>
-        <div class="st_column _section">Belgium</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">Lena</div>
-        <div class="st_column _surname">Eifel</div>
-        <div class="st_column _year">1996</div>
-        <div class="st_column _section">Germany</div>
-      </div>
-      <div class="st_row">
-        <div class="st_column _rank">0</div>
-        <div class="st_column _name">laura</div>
-        <div class="st_column _surname">Beike</div>
-        <div class="st_column _year">1952</div>
-        <div class="st_column _section">Sweden</div>
-      </div>
-    </div>
-  </div>
-</main>
-<footer>
-  <pre>
-    <code>
-/**
- * Sticky Table Headers
- *
- * @author <a href="http://elementcode.de" tatget="_blank">Wolf Wortmann</a> &lt;http://elementcode.de&gt; / &lt;ww@elementcode.de&gt;
- * @copyright (c) Copyright <a href="http://elementcode.de" tatget="_blank">Wolf Wortmann</a> &lt;http://elementcode.de&gt; / &lt;ww@elementcode.de&gt;
- * @license Feel free to use, modify and redistribute this code. But keep this license AND copyright notice.
- */
-    </code>
-  </pre>
-</footer>
+/* Toggle Switches */
 
-#
-*{
-  margin: 0;
-  pading: 0;
+/* We can't test for a specific feature,
+ * so we only target browsers with support for media queries.
+ */
+@media only screen {
+
+	/* Checkbox
+	 */
+	.toggle {
+		position: relative;
+		padding: 0;
+		margin-left: 100px;
+	}
+
+	/* Position the label over all the elements, except the slide-button
+	 * Clicking anywhere on the label will change the switch-state
+	 */
+	.toggle label {
+		position: relative;
+		z-index: 3;
+		
+		display: block;
+		width: 100%;
+	}
+
+	/* Don't hide the input from screen-readers and keyboard access
+	 */
+	.toggle input {
+		position: absolute;
+		opacity: 0;
+		z-index: 5;
+	}
+	
+	.toggle p {
+		position: absolute;
+		left: -100px;
+		
+		width: 100%;
+		margin: 0;
+		padding-right: 100px;
+		
+		text-align: left;
+	}
+	
+	.toggle p span {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 5;
+		
+		display: block;
+		width: 50%;
+		margin-left: 100px;
+		
+		text-align: center;
+	}
+	
+	.toggle p span:last-child {
+		left: 50%;
+	}
+
+	.toggle .slide-button {
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 4;
+		
+		display: block;
+		width: 50%;
+		height: 100%;
+		padding: 0;
+	}
+
+	/* Radio Switch
+	 */
+	.switch {
+		position: relative;
+		padding: 0;
+	}
+	
+	.switch input {
+		position: absolute;
+		opacity: 0;
+	}
+	
+	.switch label {
+		position: relative;
+		z-index: 2;
+        display: block;
+		
+		margin: 0;
+		text-align: center;
+	}
+
+	.switch .slide-button {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 0;
+		z-index: 1;
+		
+		width: 100%;
+	}
+
+	.switch input:last-of-type:checked ~ .slide-button {
+		//left: 50%;
+	}
+
+	/* Switch with 3 items */
+	.switch.switch-three label,
+	.switch.switch-three .slide-button {
+        height: 33%;
+	}
+
+	.switch.switch-three input:checked:nth-of-type(2) ~ .slide-button {	
+		top: 33.3%;
+	}
+
+	.switch.switch-three input:checked:last-of-type ~ .slide-button {
+		top: 66.6%;
+        left: 0;
+	}
+	
+	/* Switch with 4 items */
+	.switch.switch-four label,
+	.switch.switch-four .slide-button {
+		height: 25%;
+	}
+
+	.switch.switch-four input:checked:nth-of-type(2) ~ .slide-button {	
+		top: 25%;
+	}
+	
+	.switch.switch-four input:checked:nth-of-type(3) ~ .slide-button {	
+		top: 50%;
+	}
+
+	.switch.switch-four input:checked:last-of-type ~ .slide-button {
+		top: 75%;
+	}
+	
+	/* Switch with 5 items */
+	.switch.switch-five label,
+	.switch.switch-five .slide-button {
+		height: 20%;
+	}
+
+	.switch.switch-five input:checked:nth-of-type(2) ~ .slide-button {	
+		top: 20%;
+	}
+	
+	.switch.switch-five input:checked:nth-of-type(3) ~ .slide-button {	
+		top: 40%;
+	}
+	
+	.switch.switch-five input:checked:nth-of-type(4) ~ .slide-button {	
+		top: 60%;
+	}
+
+	.switch.switch-five input:checked:last-of-type ~ .slide-button {
+		top: 80%;
+	}
+
+	/* Shared */
+	.toggle,
+	.switch {
+		display: block;
+	}
+	
+	.switch *,
+	.toggle * {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	.switch .slide-button,
+	.toggle .slide-button {
+		display: block;
+		
+		-webkit-transition: all 0.3s ease-out;
+		-moz-transition: all 0.3s ease-out;
+		-ms-transition: all 0.3s ease-out;
+		-o-transition: all 0.3s ease-out;
+		transition: all 0.3s ease-out;
+	}
+	
+	.toggle label,
+	.toggle p,
+	.switch label {
+		line-height: 30px;
+		vertical-align: middle;
+	}
+	
+	.toggle input:checked ~ .slide-button {
+		right: 50%;
+	}
+	
+	/* Outline the toggles when the inputs are focused */
+	.toggle input:focus ~ .slide-button,
+	.switch input:focus + label {
+		outline: 1px dotted #888;
+	}
+	
+	/* Bugfix for older Webkit, including mobile Webkit. Adapted from:
+	 * http://css-tricks.com/webkit-sibling-bug/
+	 */
+	.switch, .toggle {
+		-webkit-animation: bugfix infinite 1s;
+	}
+	
+	@-webkit-keyframes bugfix { from { position: relative; } to { position: relative; } }
+
+
+	/* Standalone Themes */
+
+
+	/* Candy Theme
+	 * Based on the "Sort Switches / Toggles (PSD)" by Ormal Clarck
+	 * http://www.premiumpixels.com/freebies/sort-switches-toggles-psd/
+	 */
+	 
+	.candy {
+		background-color: #2d3035;
+		
+		color: #fff;
+		font-weight: bold;
+		text-align: center;
+		text-shadow: 1px 1px 1px #191b1e;
+			
+		border-radius: 3px;	
+		
+		box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(255, 255, 255, 0.2);
+	}
+
+	.candy input:checked + label {
+		color: #333;
+		text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+	}
+		
+	.candy .slide-button {
+		border: 1px solid #333;
+
+		background-color: #70c66b;
+		
+		background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+		background-image:    -moz-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+		background-image:     -ms-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+		background-image:      -o-linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+		background-image:         linear-gradient(top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+		
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+		
+		border-radius: 3px;
+	}
+
+	.candy p {
+		color: #333;
+		
+		text-shadow: none;
+	}
+
+	.candy span {
+		color: #fff;
+	}
+
+	.candy.blue .slide-button {
+		background-color: #38a3d4;
+	}
+
+	.candy.yellow .slide-button {
+		background-color: #f5e560;
+	}
+
+	/* Android Theme
+	 * Based on Holo
+	 */
+	 
+	.android {
+		background-color: #b6b6b6;
+		
+		color: #fff;
+	}
+
+	.android.toggle {
+		border: 2px solid #b6b6b6;
+	}
+
+	.android.switch {
+		overflow: hidden;
+	}
+		
+	.android.switch .slide-button {
+		background-color: #279fca;
+		
+		-webkit-transform: skew(20deg) translateX(10px);
+		-moz-transform: skew(20deg) translateX(10px);
+		-ms-transform: skew(20deg) translateX(10px);
+		-o-transform: skew(20deg) translateX(10px);
+		transform: skew(20deg) translateX(10px);
+	}
+
+	.android.toggle .slide-button {
+		border-radius: 2px;
+		
+		background-color: #848484;
+	}
+
+	/* Selected ON toggle */
+	.android.toggle input:first-of-type:checked ~ .slide-button {
+		background-color: #279fca;
+	}
+
+	.android.switch input:first-of-type:checked ~ .slide-button {
+		-webkit-transform: skew(20deg) translateX(-10px);
+		-moz-transform: skew(20deg) translateX(-10px);
+		-ms-transform: skew(20deg) translateX(-10px);
+		-o-transform: skew(20deg) translateX(-10px);
+		transform: skew(20deg) translateX(-10px);
+	}
+
+	.android p {
+		color: #333;
+	}
+
+	.android span {
+		color: #fff;
+	}
+
+	.android.switch,
+	.android span {
+		text-transform: uppercase;
+	}
+
+	/* Fix Android/Holo Theme in firefox - force absolute position */
+	.android.switch input {
+		top: 0;
+		left: 0;
+	}
+
+	/* iOS Theme
+	 * Similar to iOS but more accessible
+	 */ 
+
+	.ios {
+		background: -webkit-linear-gradient(top, #cfcfcf, #efefef 50%, #f9f9f9 50%, #fefefe);
+		background: -moz-linear-gradient(top, #cfcfcf, #efefef 50%, #f9f9f9 50%, #fefefe);
+		background: -o-linear-gradient(top, #cfcfcf, #efefef 50%, #f9f9f9 50%, #fefefe);
+		background: -ms-linear-gradient(top, #cfcfcf, #efefef 50%, #f9f9f9 50%, #fefefe);
+		background: linear-gradient(top, #cfcfcf, #efefef 50%, #f9f9f9 50%, #fefefe);
+		
+		-webkit-box-shadow: inset 0 2px 2px #b6b6b6, inset 3px 0 3px #b6b6b6;
+		box-shadow: inset 0 2px 2px #b6b6b6, inset 3px 0 3px #b6b6b6;
+
+		border: 1px solid #efefef;
+		border-radius: 3px;
+		
+		color: #7f7f7f;
+		font: bold 14px sans-serif; 
+		text-align: center;
+		text-shadow: none;
+	}
+
+	.ios.toggle .slide-button {
+		border: 1px solid #919191;
+		background: -webkit-linear-gradient(top, #cdcdcd, #fbfbfb);
+		background: -moz-linear-gradient(top, #cdcdcd, #fbfbfb);
+		background: -o-linear-gradient(top, #cdcdcd, #fbfbfb);
+		background: -ms-linear-gradient(top, #cdcdcd, #fbfbfb);
+		background: linear-gradient(top, #cdcdcd, #fbfbfb);
+		
+		border-radius: 3px;
+		
+		-webkit-box-shadow: inset 0 1px 0 #f0f0f0;
+		box-shadow: inset 0 1px 0 #f0f0f0;
+	}
+
+	/* Selected ON toggle */
+	.ios.toggle input:first-of-type:checked ~ p span:first-child,
+	.ios.switch input:checked + label {
+		color: #fff;
+		text-shadow: 0 -1px 0 #1b3b6f;
+	}
+
+	.ios.toggle input:first-of-type:checked ~ .slide-button,
+	.ios.switch .slide-button {
+		background: -webkit-linear-gradient(top, #3672dc, #4085ec 50%, #4d8fef 50%, #76adfc);
+		background: -moz-linear-gradient(top, #3672dc, #4085ec 50%, #4d8fef 50%, #76adfc);
+		background: -o-linear-gradient(top, #3672dc, #4085ec 50%, #4d8fef 50%, #76adfc);
+		background: -ms-linear-gradient(top, #3672dc, #4085ec 50%, #4d8fef 50%, #76adfc);
+		background: linear-gradient(top, #3672dc, #4085ec 50%, #4d8fef 50%, #76adfc);
+		
+		border-radius: 3px;
+		border: 1px solid #1654b5;
+		
+		text-align: center;
+		color: #fff;
+		
+		font: bold 14px sans-serif; 
+		text-shadow: 0 -1px 0 #1b3b6f;
+	}
+	
+	.ios.toggle p span {
+		color: #7f7f7f;
+	}
+	
+}
+
+
+
+----------------------------------------------------------------------------------------
+
+<label>View</label>
+<div class="switch switch-three candy yellow" id="radio-switch">
+	<input id="hour3" name="view3" type="radio" value="Hour" checked="checked">
+	<label for="hour3" onclick="">Hour</label>
+	
+	<input id="day4" name="view3" type="radio" value="Day">	
+	<label for="day4" onclick="">Day</label>
+	
+	<input id="week5" name="view3" type="radio" value="Week">
+	<label for="week5" onclick="">Week</label>
+	
+	<span class="slide-button"></span>
+</div>
+                        
+<label>View</label>
+<div class="switch switch-four candy yellow" id="radio-switch">
+	<input id="hour13" name="view4" type="radio" value="Hour" checked="checked">
+	<label for="hour13" onclick="">Hour</label>
+	
+	<input id="day14" name="view4" type="radio" value="Day">	
+	<label for="day14" onclick="">Day</label>
+	
+	<input id="week15" name="view4" type="radio" value="Week">
+	<label for="week15" onclick="">Week</label>
+
+	<input id="week16" name="view4" type="radio" value="Week">
+	<label for="week16" onclick="">Week</label>
+	
+	<span class="slide-button"></span>
+</div>                        
+                        
+<label>View</label>
+<div class="switch switch-five candy yellow" id="radio-switch">
+	<input id="hour23" name="view5" type="radio" value="Hour" checked="checked">
+	<label for="hour23" onclick="">Hour</label>
+	
+	<input id="day24" name="view5" type="radio" value="Day">	
+	<label for="day24" onclick="">Day</label>
+	
+	<input id="week25" name="view5" type="radio" value="Week">
+	<label for="week25" onclick="">Week</label>
+
+	<input id="week26" name="view5" type="radio" value="Week">
+	<label for="week26" onclick="">Week</label>
+
+	<input id="week27" name="view5" type="radio" value="Week">
+	<label for="week27" onclick="">Week</label>
+	
+	<span class="slide-button"></span>
+</div>                        
+                     
+                        
+				
+-------------------------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
-body{
-  background-color: rgb(63,72,83);
-  font-family: sans-serif;
-  color: rgb(220,220,220);
-  padding: 50px;
-  width: 100vw;
-  overflow-x: hidden;
-}
-h1{
-  font-weight: 400;
-}
-a{
-  color: inherit;
-}
-p{
-  margin-top: .7em;
-}
-.warning{
-  color: rgb(62,148,236);
-}
-.st_viewport{
-  max-height: 500px;
-  overflow: auto;
+
+body {
+  background-color: #212121;
+  font-family: 'Roboto', sans-serif;
 }
 
-[data-table_id="1"]{
-  background-color: rgb(255,115,0);
-}
-[data-table_id="2"]{
-  background-color: rgb(61,53,39);
-  color: rgb(220,220,220);
-}
-[data-table_id="3"]{
-  background-color: rgba(168,189,4, .8);
+.toggle-switch-container {
+  align-content: center;
+  padding: 30px;
 }
 
-._rank{
-  min-width: 80px;
-}
-._id{
-  min-width: 60px;
-}
-._name{
-  min-width: 130px;
-}
-._surname{
-  min-width: 130px;
-}
-._year{
-  min-width: 80px;
-}
-._section{
-  min-width: 130px;
-}
-
-pre{
-  overflow: auto;
-}
-
-/** Sticky table styles **/
-.st_viewport{
-  background-color: rgb(62,148,236);
-  color: rgb(27,30,36);
-  margin: 20px 0;
-}
-/* ###  Table wrap */
-.st_wrap_table{
-  
-}
-/* ##   header */
-.st_table_header{
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
-  z-index: 1;
-  background-color: rgb(27,30,36);
-  color: rgb(220,220,220);
-}
-.st_table_header h2{
-  font-weight: 400;
-  margin: 0 20px;
-  padding: 20px 0 0;
-}
-.st_table_header .st_row{
-  color: rgba(220,220,220, .7);
-}
-.st_table_header .st_column{
-  
-}
-/* ##  table */
-.st_table{
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-/* #   row */
-.st_row{
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.toggle-switch {
   margin: 0;
 }
-.st_table .st_row:nth-child(even){
-  background-color: rgba(0,0,0, .1)
+
+.toggle-switch {
+  width: 10px;
+  position: relative;
 }
-/* #   column */
-.st_column{
-  padding: 10px 20px;
+
+.toggle-switch input {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
 }
+
+.toggle-switch input:checked {
+  z-index: 1;
+}
+
+.toggle-switch input:checked + label {
+  opacity: 1;
+  cursor: default;
+}
+
+.toggle-switch input:not(:checked) + label:hover {
+  opacity: 0.5;
+}
+
+.toggle-switch label {
+  color: #fff;
+  opacity: 0.33;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.toggle-switch .toggle-outside {
+  height: 100%;
+  border-radius: 17px;
+  padding: 11px;
+  overflow: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.toggle-switch .toggle-inside {
+  border-radius: 50%;
+  background: #424242;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+.switch-vertical {
+  background-color: #00F;
+  width: 0px;
+  height: 60px;
+  margin-left: 27px;
+}
+
+.switch-vertical input {
+  height: 100%;
+  width: 60px;
+  right: 0;
+  margin: 0;
+}
+
+.switch-vertical label {
+  font-size: 15px;
+  line-height: 30px;
+  display: block;
+  width: 80px;
+  height: 50%;
+  margin: 0;
+  text-align: left;
+  padding-left: 12px;
+}
+
+.switch-vertical .toggle-outside {
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  width: 23px;
+  height: 100%;
+  right: 0;
+  top: 0;
+}
+
+.switch-vertical .toggle-inside {
+  height: 17px;
+  left: 3px;
+  top: 3px;
+  width: 17px;
+}
+
+.switch-vertical input:checked ~ .toggle-outside .toggle-inside {
+  top: 3px;
+}
+
+.switch-vertical input ~ input:checked ~ .toggle-outside .toggle-inside {
+  top: 40px;
+}
+------------------------------------------------------------------
+<body>
+  <div class="toggle-switch-container">
+    <div class="toggle-switch switch-vertical">
+      <input id="toggle-a" type="radio" name="switch" checked="checked" />
+      <label for="toggle-a">Option A</label>
+      <input id="toggle-b" type="radio" name="switch" />
+      <label for="toggle-b">Option B</label>
+      <span class="toggle-outside">
+        <span class="toggle-inside"></span>
+      </span>
+    </div>
+  </div>
+</body>
