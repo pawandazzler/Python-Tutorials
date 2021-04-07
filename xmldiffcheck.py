@@ -1,15 +1,5 @@
 ##########################################################################
 #
-#  xmldiff
-#
-#    Simple utility script to enable a diff of two XML files in a way 
-#     that ignores the order or attributes and elements.
-#
-#    Dale Lane (email@dalelane.co.uk)
-#     6 Oct 2014
-#
-##########################################################################
-#
 #  Overview
 #    The approach is to sort both files by attribute and element, and 
 #     then reuse an existing diff implementation on the sorted files.
